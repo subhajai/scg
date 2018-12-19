@@ -1,12 +1,5 @@
 const functions = require('firebase-functions');
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
-
 // FitstTask
 
 function findingNextOddInSequence (arr) {
@@ -46,7 +39,7 @@ function Task1 (str='3,5,9,15') {
 */
 
 function Task2 (str = '(Y+24)+(10×2)=99') {
-    
+
     const args = convertMultiplySymbol(str).replace(/\s/g,'');
     return formatOutput({
         "explaination": "The solution is to split the equation firstly by '=' sign so it becomes array of factors. Then the result of the equation is the last array element (array[1]). Then, converting the operators of each fuactors to be the opposite, e.g. + beacomes -"
@@ -166,7 +159,7 @@ function formatOutput (o) {
 }
 
 exports.Test = functions.https.onRequest((request, response) => {
-   // response.send(decodeURI(request.query.args)); return;
+
    const task = request.query.task,
          args =  request.query.args,
          out = taskMaps[task].call(this,args);

@@ -48,7 +48,7 @@
     "no-eq-null": 2,
 
     // Disallow the use of eval()
-    "no-eval": 2,
+    "no-eval": 0,
 
     // Warn against extending native types
     "no-extend-native": 1,
